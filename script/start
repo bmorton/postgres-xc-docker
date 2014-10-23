@@ -7,5 +7,5 @@ sudo -iu postgres -- sh -c "$INSTALL_DIR/bin/pg_ctl start -D /data/datanode1 -Z 
 sudo -iu postgres -- sh -c "$INSTALL_DIR/bin/pg_ctl start -D /data/datanode2 -Z datanode -l $LOG_DIR/datanode2.log"
 sudo -iu postgres -- sh -c "$INSTALL_DIR/bin/pg_ctl start -D /data/coord1 -Z coordinator -l $LOG_DIR/coord1.log"
 
-tail -f /var/log/postgresql/*.log
+tail -f $LOG_DIR/*.log
 wait
