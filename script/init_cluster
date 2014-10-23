@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo -iu postgres -- sh -c "$INSTALL_DIR/bin/psql postgres -c \"CREATE NODE dn1 WITH (TYPE='datanode', PORT=15432);\""
+sudo -iu postgres -- sh -c "$INSTALL_DIR/bin/psql postgres -c \"CREATE NODE dn2 WITH (TYPE='datanode', PORT=15433);\""
+sudo -iu postgres -- sh -c "$INSTALL_DIR/bin/psql postgres -c \"select pgxc_pool_reload();\""
